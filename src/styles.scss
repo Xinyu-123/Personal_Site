@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @mixin easeOut{
-    transition: all 0.5s ease-out;
+    
+    transition: all 1s ease-out;   
+}
+
+  
+@mixin waitforEaseOut{
+    transition-delay: 1s;
 }
 
 body{
@@ -15,5 +21,39 @@ body{
     cursor: pointer;
     @include easeOut;
 
+    // Rotate Into X with Menu Lines
+
+    &.close{
+        transform: rotate(90deg);
+        opacity:0;
+        @include easeOut()
+        
+    }
+    
+    &.show{}
+    
+    
 }
+
+.menu-btn-exit {
+    position: absolute;
+    opacity:0;
+    z-index: 3;
+    right: 35px;
+    top: 35px;
+    cursor: pointer;
+    @include easeOut;
+
+    // Rotate Into X with Menu Lines
+
+    &.in{
+        transform: rotate(90deg);
+        opacity:100;
+        @include waitforEaseOut();
+        
+    }
+    
+}
+
+
 

@@ -11,28 +11,31 @@
 
 <body id="bg-img">
   <header>
-    <div class="menu-btn">
+    <div [class]="menuBtn" (click)="toggleMenu()">
       <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
     </div>
+    <div [class]="menuBtnExit" (click)="toggleMenu()">
+      <i class="fas fa-times fa-2x"></i>
+    </div>
 
-    <nav class ="menu">
-      <div class="menu-branding">
+    <nav [class] ="menu">
+      <div [class]="menuBranding">
         <div class="portrait"></div>
       </div>
-      <ul class= "menu-nav">
-        <li class="nav-item">
+      <ul [class]= "menuNav">
+        <li [class]="navItem">
           <a href="/" class="nav-link">
             {{title}}
           </a>
-        <li class="nav-item">
+        <li [class]="navItem">
           <a href="/" class="nav-link">
             My Work
           </a>
-        <li class="nav-item">
+        <li [class]="navItem">
           <a href="/" class="nav-link">
             About Me
           </a>
-        <li class="nav-item">
+        <li [class]="navItem">
           <a href="/" class="nav-link">
             Contact Info
           </a>  
