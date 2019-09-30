@@ -6,18 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  id = 1;
   menuBtn ='menu-btn';
   menuBtnExit = 'menu-btn-exit'
   menu = 'menu';
   menuNav='menu-nav';
   menuBranding='menu-branding';
   navItem='nav-item';
-  
-  //menuBtn = document.getElementById('my-row').querySelector<HTMLInputElement>('.btn.menu').value
+  navItemCurrent='nav-item current'
   
   showMenu=false;
-  title='port'
+  title='Home'
   
   toggleMenu(){
     if(!this.showMenu){
@@ -27,6 +25,7 @@ export class AppComponent {
       this.menuNav='menu-nav show';
       this.menuBranding='menu-branding show';
       this.navItem='nav-item show';
+      this.navItemCurrent='nav-item current show'
 
       //Set Menu State
       this.showMenu = true;
@@ -37,6 +36,7 @@ export class AppComponent {
       this.menuNav='menu-nav';
       this.menuBranding='menu-branding';
       this.navItem='nav-item';
+      this.navItemCurrent='nav-item current';
 
       //Set Menu State
       this.showMenu=false;
