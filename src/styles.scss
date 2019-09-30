@@ -169,8 +169,10 @@ body{
         text-align: center;
 
         .lg-heading{
-            line-height: 1;
-            margin-bottom: 1rem;
+            line-height: 0.7;
+            .text-secondary{
+                line-height: 1.2;
+            }
         }
     }
 
