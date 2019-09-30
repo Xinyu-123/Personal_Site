@@ -16,6 +16,8 @@ body{
     margin:0;
 }
 
+
+//Menu Styles
 .menu-btn {
     position: absolute;
     z-index: 3;
@@ -73,7 +75,7 @@ body{
         align-items: center;
         justify-content: center;
         float: right;
-        width: 30%;
+        width: 30vw;
         height:100vh;
         overflow: hidden;
         margin: 0;
@@ -123,6 +125,75 @@ body{
         transition-delay: $x*0.1s;
     }
 }
+
+
+//Responsiveness
+@mixin mediaSm{
+    @media screen and (max-width: 500px){
+        @content;
+    }
+}
+
+@mixin mediaMd{
+    @media screen and (max-width: 768px){
+        @content;
+
+    }
+}
+
+@mixin mediaLg{
+    @media screen and (min-width:769px) and (max-width: 1170px){
+        @content;
+    }
+}
+
+@mixin mediaXl{
+    @media screen and (min-width: 1171px){
+        @content;
+    }
+}
+
+@include mediaXl{
+
+}
+
+@include mediaLg{
+    ul.menu-nav{
+        width:50vw;
+    }
+}
+
+@include mediaMd{
+    main{
+        align-items: center;
+        text-align: center;
+
+        .lg-heading{
+            line-height: 1;
+            margin-bottom: 1rem;
+        }
+    }
+
+    ul.menu-nav{
+        width:100vw;
+        font-size: 24px;
+
+
+    }
+
+
+}
+
+@include mediaSm{
+    main#home h1{
+        margin-top:10vh
+    }
+}
+
+
+
+
+
 
 
 
