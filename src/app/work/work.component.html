@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Welcome To My Portfolio</title>
+</head>
+
+
+<body id="bg-img">
+  <header>
+    <div [class]="menuBtn" (click)="toggleMenu()">
+      <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
+    </div>
+    <div [class]="menuBtnExit" (click)="toggleMenu()">
+      <i class="fas fa-times fa-2x"></i>
+    </div>
+
+    <nav [class] ="menu">
+      <div [class]="menuBranding">
+        <div class="portrait"></div>
+      </div>
+      <ul [class]= "menuNav">
+        <li [class]="navItem">
+          <a routerLink="/home" class="nav-link">
+            Home
+          </a>
+        <li [class]="navItemCurrent">
+          <a routerLink="/work" class="nav-link">
+            My Work
+          </a>
+        <li [class]="navItem">
+          <a routerLink="/about" class="nav-link">
+            About Me
+          </a>
+        <li [class]="navItem">
+          <a routerLink="/contact" class="nav-link">
+            Contact Info
+          </a>  
+        </li>
+      </ul>
+    </nav>
+
+    
+  </header>
+
+  <main id="home">
+    <h1 class="lg-heading">
+      Xinyu <span class="text-secondary">Dong</span>
+    </h1>
+    <h2 class="sm-heading">
+      FullStack & Game Developer
+    </h2>
+  
+    <div class="icons">
+      <a href="#!">
+        <i class="fab fa-angular fa-2x"></i>
+      </a>
+      <a href="">
+        <i class="fab fa-github fa-2x"></i>
+      </a>
+      <a href="">
+        <i class="fas fa-envelope-square fa-2x"></i>
+      </a>
+    </div>
+  
+  </main>
+
+</body>
+
+</html>

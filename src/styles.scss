@@ -12,6 +12,7 @@ $secondary-color: #eece1a;
     transition-delay: 0.3s;
 }
 
+
 body{
     margin:0;
 }
@@ -127,80 +128,7 @@ body{
 }
 
 
-//Responsiveness
-@mixin mediaSm{
-    @media screen and (max-width: 500px){
-        @content;
-    }
-}
 
-@mixin mediaMd{
-    @media screen and (max-width: 768px){
-        @content;
-
-    }
-}
-
-@mixin mediaLg{
-    @media screen and (min-width:769px) and (max-width: 1170px){
-        @content;
-    }
-}
-
-@mixin mediaXl{
-    @media screen and (min-width: 1171px){
-        @content;
-    }
-}
-
-@include mediaXl{
-
-}
-
-@include mediaLg{
-    ul.menu-nav{
-        width:50vw;
-    }
-}
-
-@include mediaMd{
-    main{
-        align-items: center;
-        text-align: center;
-        text-justify: center;
-
-        .lg-heading{
-            font-size: 10px;
-            line-height: 0.7;
-            .text-secondary{
-                line-height: 1.2;
-            }
-        }
-    }
-
-    ul.menu-nav{
-        width:100vw;
-        font-size: 24px;
-
-
-    }
-
-
-}
-
-@include mediaSm{
-    main#home h1{
-        margin-top:10vh
-    }
-
-    main{
-        margin-left:0;
-        font-size: 80%;
-        .lg-heading{
-            font-size: 10%;
-        }
-    }
-}
 
 
 
