@@ -1,4 +1,4 @@
-$primary-color:black;
+$primary-color:#444;
 $secondary-color: #eece1a;
 $show-home-image: true;
 $home-image: url(../../assets/img/background.jpg);
@@ -11,17 +11,28 @@ $background-opacity: 0.4;
 @mixin background{
     @if $show-home-image{
         &#bg-img{
-            background-image: linear-gradient(to bottom, rgb(blue, $background-opacity), rgb(purple,$background-opacity)), $home-image;
+            background-image: linear-gradient(to bottom, rgb($primary-color, $background-opacity), rgb($primary-color,1)), $home-image;
             background-attachment: fixed;
             background-size: cover;
             height:100vh;
-
 
         }
         
     }
 }
 
+@mixin centerer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+@mixin horizontal-centerer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 @function set-text-color($opacity){
     @if($opacity < 0.2){
@@ -36,7 +47,6 @@ $background-opacity: 0.4;
 }
 body{
     @include background();
-    background: $primary-color;
     color: set-text-color($background-opacity);
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -78,7 +88,6 @@ header{
 
 main{
     padding: 4rem;
-    height: 100%;
     .icons{
         margin-top: 1rem;
             
@@ -92,9 +101,70 @@ main{
     }
 
     &#home{
+        position: relative;
         overflow: hidden;
+        height:100vh;
         h1{
             margin-top: 20vh;
+        }
+
+        #work-transition{
+            button{
+                @include easeOut();
+                @include horizontal-centerer();
+                text-align: center;
+                bottom:30px;
+                background: transparent;
+                border: none !important;
+                color:#fff;
+                font-size: 1em;
+                &:hover{
+                    transform: scale(1.5) translateX(-33%);
+                    color: $secondary-color;
+                    cursor: pointer;
+                    @include easeOut();
+                }
+            }
+
+        }
+    }
+
+    &#work{
+        background-color: $primary-color;
+
+        .projects{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-gap: 0.7rem;
+            .btns{
+                display:grid;
+                grid-template-columns: repeat(2,1fr);
+                grid-gap: 1rem;
+                text-align: center;
+                margin-bottom: 2vh;
+            }
+            a{
+                &.btn{
+                    border: 2px #fff solid;
+                    &:hover{
+                        transform: scale(1.5);
+                        color: $secondary-color;
+                        @include easeOut();
+                    }
+                }
+                
+            }
+            
+            img{
+                width: 100%;
+                border: 3px #fff solid;
+        
+                &:hover {
+                    opacity: 0.5;
+                    border-color: $secondary-color;
+                    @include easeOut();
+                }
+            }
         }
     }
 }

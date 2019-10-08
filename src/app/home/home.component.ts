@@ -43,9 +43,14 @@ export class HomeComponent implements OnInit {
       //Set Menu State
       this.showMenu=false;
     }
-    
 
   }
+
+  scroll(el: HTMLElement) {
+    el.scrollIntoView({behavior:"smooth"}); 
+    
+  }
+
   ngOnInit() {
   }
 

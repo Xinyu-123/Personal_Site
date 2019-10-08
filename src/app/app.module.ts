@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { HomeComponent } from './home/home.component';
-import { WorkComponent } from './work/work.component';
 import { ContactComponent } from './contact/contact.component';
 
 
@@ -15,7 +14,6 @@ import { ContactComponent } from './contact/contact.component';
     AppComponent,
     AboutComponent,
     HomeComponent,
-    WorkComponent,
     ContactComponent
   ],
   imports: [
