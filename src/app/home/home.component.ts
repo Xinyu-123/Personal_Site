@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor() { }
+
+  //Menu Variables
   menuBtn ='menu-btn';
   menuBtnExit = 'menu-btn-exit'
   menu = 'menu';
@@ -15,6 +17,14 @@ export class HomeComponent implements OnInit {
   menuBranding='menu-branding';
   navItem='nav-item';
   navItemCurrent='nav-item current'
+
+  //Project Image Variables
+  project1 = 'project-text1'
+  project2 = 'project-text2'
+  project3 = 'project-text3'
+  project4 = 'project-text4'
+
+
   
   showMenu=false;
   title='Home'
@@ -44,6 +54,10 @@ export class HomeComponent implements OnInit {
       this.showMenu=false;
     }
 
+  }
+
+  toggleText(){
+    this.project1='project-text1-hidden'
   }
 
   scroll(el: HTMLElement) {
