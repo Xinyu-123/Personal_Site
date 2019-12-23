@@ -125,7 +125,7 @@ main{
                     @include easeOut();
                 }
                 &:active{
-                    transform: scale(1.5);
+                    transform: scale(1.5) translateX(-33%);
                     color: $secondary-color;
                     @include easeOut();
                 }
