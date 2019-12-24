@@ -161,10 +161,10 @@ main{
                 }
                 
             }
-            
+            //1.4902754491
             img{
-                width:435.533px;
-                height: 292.25px;
+                width: 100%;
+                height: 18em;
                 border: 3px #fff solid;
                 opacity: 0.4;
                 &:hover {
@@ -210,7 +210,7 @@ main{
 }
 
 @mixin mediaXl{
-    @media screen and (min-width: 1171px){
+    @media screen and (min-width: 1171px) and (max-width: 1400){
         @content;
     }
 }
@@ -220,7 +220,7 @@ main{
         &#work{
             .projects{
                     display: grid;
-                    grid-template-columns: repeat(4,1fr);
+                    grid-template-columns: repeat(3,1fr);
                     grid-gap: 0.7rem;
             }
         }
