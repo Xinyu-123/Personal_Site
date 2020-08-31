@@ -10,7 +10,7 @@
 
 
 <body id="bg-img">
-  <header>
+  <!-- <header>
     <div [class]="menuBtn" (click)="toggleMenu()">
       <i class="fa fa-bars fa-2x" aria-hidden="true"></i>
     </div>
@@ -44,7 +44,7 @@
     </nav>
 
     
-  </header>
+  </header> -->
 
   <main id="home">
     <h1 class="lg-heading">
@@ -87,12 +87,44 @@
     <h2 class="sm-heading">
       Check out some of my projects...
     </h2>
-    
+
     <div class="projects">
+      <div *ngFor="let project of projects">
+        <div class="project">
+          <div class="card">
+              <img src="{{project.image}}" alt="Project">
+              <h4> {{project.name}} </h4>
+          </div>
+          <div class="btns">    
+            <a *ngIf="project.site; else noSite" class="btn" href="{{project.site}}">
+                <i class="fas fa-eye"></i> Project
+            </a>
+            <ng-template #noSite>
+              <a class="btn" href="{{project.site}}">
+                <i class="fas fa-eye"></i> Not Available
+              </a>
+            </ng-template>
+  
+            <a *ngIf="project.github; else noGit" href="{{ project.github }}" target="_blank" class="btn">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <ng-template #noGit>
+              <a href="{{ project.github }}" target="_blank" class="btn">
+                <i class="fab fa-github"></i> Not Available
+              </a>
+            </ng-template>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- <div class="projects">
+
       <div class="item">
         <div [class]="project1" (click)="toggleText">
             <img src="../../assets/img/projects/project1.png" alt="Project">
-            <h4>Personal Website Portfolio</h4>
+            <h4>Music Review </h4>
         </div>
         <div class="btns">    
           <a class="btn">
@@ -103,6 +135,7 @@
           </a>
         </div>
       </div>
+
       <div class="item">
         <div [class]="project1" (click)="toggleText">
           <img src="../../assets/img/projects/project2.png" alt="Project">
@@ -117,6 +150,7 @@
           </a>
         </div>
       </div>
+
       <div class="item">
         <div [class]="project1" (click)="toggleText">
           <img src="../../assets/img/projects/project3.png" alt="Project">
@@ -131,6 +165,7 @@
           </a>
         </div>
       </div>
+
       <div class="item">
         <div [class]="project1" (click)="toggleText">
           <img src="../../assets/img/projects/project4.png" alt="Project">
@@ -145,16 +180,16 @@
           </a>
         </div>
       </div>
-          <div class="item">
-            <div [class]="project1" (click)="toggleText">
-              <img src="../../assets/img/background.jpg" alt="Project">
-              <h4>More coming soon...</h4>
-            </div>
 
-
-          </div>
+      <div class="item">
+        <div [class]="project1" (click)="toggleText">
+          <img src="../../assets/img/background.jpg" alt="Project">
+          <h4>More coming soon...</h4>
+        </div>
       </div>
-    </main>
+
+    </div> -->
+  </main>
   
 
 </body>

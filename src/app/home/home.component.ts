@@ -18,11 +18,14 @@ export class HomeComponent implements OnInit {
   navItem='nav-item';
   navItemCurrent='nav-item current'
 
-  //Project Image Variables
-  project1 = 'project-text1'
-  project2 = 'project-text2'
-  project3 = 'project-text3'
-  project4 = 'project-text4'
+
+  projects = [
+    {name: "Music Review Application", image: "../../assets/img/projects/music.png", github: "https://github.com/Xinyu-123/Music-Review-Application", site: "http://ec2-18-225-31-29.us-east-2.compute.amazonaws.com/home"},
+    {name: "Defeat the Dragon", image: "../../assets/img/projects/dragon.png", github: "https://github.com/Xinyu-123/Defeat-the-Dragon", site: "http://defeat-dragon.s3-website-us-east-1.amazonaws.com/"},
+    {name: "Unity Space Shoot'em Up", image: "../../assets/img/projects/space.png", github: null, site: "https://simmer.io/@AimlessEggs/space-shooter"},
+    {name: "Java Sketchpad", image: "../../assets/img/projects/sketchpad.png", github: "https://github.com/Xinyu-123/Sketchpad-application", site: null},
+    {name: "Unity Racing Game", image: "../../assets/img/projects/racing.png", github: "https://github.com/Xinyu-123/UnityRacingGame", site: "https://simmer.io/@AimlessEggs/racer"},
+  ]
 
 
   
@@ -56,9 +59,6 @@ export class HomeComponent implements OnInit {
 
   }
 
-  toggleText(){
-    this.project1='project-text1-hidden'
-  }
 
   scroll(el: HTMLElement) {
     el.scrollIntoView({behavior:"smooth"}); 
